@@ -1,20 +1,20 @@
 :root {
     /* Light mode */
     --light-background-color: white;
-    --light-content-color: rgba(0, 0, 0, 0.9);
     --light-body-text-color: rgb(0, 0, 0);
+    --light-content-color: rgb(0, 0, 0);
     --light-content-text-color: white;
 
     /* Dark mode */
     --dark-background-color: black;
-    --dark-content-color: rgba(219, 239, 245, 0.9);
     --dark-body-text-color: rgb(219, 239, 245);
+    --dark-content-color: rgb(219, 239, 245);
     --dark-content-text-color: black;
 
     /* Default */
     --background-color: var(--light-background-color);
-    --content-color: var(--light-content-color);
     --body-text-color: var(--light-body-text-color);
+    --content-color: var(--light-content-color);
     --content-text-color: var(--light-content-text-color);
 }
 
@@ -39,6 +39,8 @@ body {
     background-color: var(--background-color);
     color: var(--body-text-color);
     line-height: 1.6;
+    padding-top: 8vh;
+    transition: 0.5s linear;
 }
 
 body.transitions-enabled {   
@@ -52,6 +54,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .header-right {
@@ -78,7 +85,7 @@ nav a {
 /* || HERO */
 
 .hero {
-    height: 50vh;
+    height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,8 +94,79 @@ nav a {
 
 .hero h1 {
     font-size: 3rem;
-    font-weight: normal;
+    font-weight: 550;
     letter-spacing: 4px;
+}
+
+/* || IMAGE GALLERY */
+
+.gallery-grid {
+    color: var(--content-text-color);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Base gallery item styles */
+.gallery-item {
+    cursor: pointer;
+    padding: 2rem;
+    border-radius: 4px;
+    min-height: 300px;
+    position: relative;
+    background-color: var(--content-color);
+}
+
+/* Full background image style */
+.gallery-background {
+    color: var(--light-content-text-color);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.gallery-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7));
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.gallery-background > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Text-only style */
+.gallery-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        min-height: 250px;
+    }
 }
 
 /* || DARK MODE TOGGLE */

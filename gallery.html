@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Thread Forward</title>
+    <title>Gallery - Thread Forward</title>
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
     <header>
         <h2>Thread Forward</h2>
         <div class="header-right">
-            <button onclick="toggleDarkMode()" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+            <button id="darkModeToggle" onclick="window.toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="stories.html">Stories</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -55,6 +56,6 @@
             </div>
         </section>
     </main>
-    <script src="javascript/gallery.js"></script>
+    <script type="module" src="javascript/gallery.js"></script>
 </body>
 </html>

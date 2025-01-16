@@ -1,114 +1,14 @@
-:root {
-    /* Light mode */
-    --light-background-color: white;
-    --light-content-color: rgba(0, 0, 0, 0.9);
-    --light-body-text-color: rgb(0, 0, 0);
-    --light-content-text-color: white;
-
-    /* Dark mode */
-    --dark-background-color: black;
-    --dark-content-color: rgba(219, 239, 245, 0.9);
-    --dark-body-text-color: rgb(219, 239, 245);
-    --dark-content-text-color: black;
-
-    /* Default */
-    --background-color: var(--light-background-color);
-    --content-color: var(--light-content-color);
-    --body-text-color: var(--light-body-text-color);
-    --content-text-color: var(--light-content-text-color);
-}
-
-@font-face {
-    font-family: Fredoka;
-    src: url(../assets/fonts/Fredoka.ttf);
-}  
-
-@font-face {
-    font-family: Lexend;
-    src: url(../assets/fonts/Lexend.ttf);
-}  
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Lexend, sans-serif;
-    background-color: var(--background-color);
-    color: var(--body-text-color);
-    line-height: 1.6;
-}
-
-body.transitions-enabled {   
-    transition: 0.5s linear;
-}
-
-/* || HEADER NAVIGATION */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    color: var(--body-text-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-/* || HERO */
-
 .hero {
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--body-text-color);
+    font-size: 5rem;
+    text-align: left;  
+    padding-left: 10rem;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    font-weight: normal;
-    letter-spacing: 4px;
+    margin-bottom: 1rem;
 }
 
-/* || DARK MODE TOGGLE */
-
-#darkModeToggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-#darkModeToggle:hover {
-    transform: scale(1.1);
-}
-
-body.dark-mode {
-    --background-color: var(--dark-background-color);
-    --content-color: var(--dark-content-color);
-    --body-text-color: var(--dark-body-text-color);
-    --content-text-color: var(--dark-content-text-color);
+/* || SUBTITLE */
+#subtitle {
+    font-size: 1.4rem;
 }

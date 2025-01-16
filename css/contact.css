@@ -17,7 +17,7 @@
     color: var(--content-text-color);
     background-color: var(--content-color);
     padding: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
 }
 
@@ -43,16 +43,15 @@
     align-items: center;
     padding: 1rem;
     text-decoration: none;
-    color: var(--body-text-color);
-    background-color: var(--background-color);
-    border-radius: 0.5rem;
-    transition: transform 0.2s, background-color 0.2s;
+    color: var(--content-text-color);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    transition: 0.3s;
 }
 
 .social-link:hover {
-    transform: translateX(0.625rem);
-    background-color: var(--content-color);
-    color: var(--content-text-color);
+    transform: scale(1.05);
 }
 
 .social-link i {
@@ -62,4 +61,8 @@
 
 .social-link span {
     font-size: 1.1rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
 }

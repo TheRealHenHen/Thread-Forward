@@ -6,6 +6,7 @@
 
 /* || STORY SECTION */
 .story {
+    margin-top: 3rem;
     padding: 4rem 2rem;
     background-color: var(--content-color);
     color: var(--content-text-color);

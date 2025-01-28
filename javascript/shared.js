@@ -33,29 +33,4 @@ function initializeDarkMode() {
     }, 100);
 }
 
-// Header scroll functionality
-let lastScrollY = window.scrollY;
-const SCROLL_THRESHOLD = 500; // Minimum scroll difference to trigger header visibility change
-
-function handleScroll() {
-    const header = document.querySelector('header');
-    const currentScrollY = window.scrollY;
-    const scrollDifference = Math.abs(currentScrollY - lastScrollY);
-    
-    // Show/hide header based on scroll direction if threshold is met
-    if (scrollDifference >= SCROLL_THRESHOLD) {
-        if (currentScrollY > lastScrollY) {
-            // Scrolling down
-            header.classList.add('hidden');
-        } else {
-            // Scrolling up
-            header.classList.remove('hidden');
-        }
-        lastScrollY = currentScrollY;
-    }
-}
-
-// Add scroll event listener
-window.addEventListener('scroll', handleScroll);
-
 export { toggleDarkMode, initializeDarkMode };

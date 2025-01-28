@@ -3,13 +3,132 @@
     text-align: left;  
     margin: 1rem;
     padding-left: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 8rem;
+    margin-bottom: 10rem;
 }
 
 .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-/* || SUBTITLE */
-#subtitle {
-    font-size: 1.4rem;
+section.img {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#small-img {
+    width: 16rem;
+    height: 19rem;
+}
+
+#large-img {
+    width: 19rem;
+    height: 28rem;
+}
+
+.title {
+    padding-bottom: 4rem;
+}
+
+section.donation-number {
+    height: 100vh;
+    background-image: url(../assets/images/background/light-background.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateX(-7rem);
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.donation-number.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.donation-number h2, .what-we-do h2 {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.donation-number h1 {
+    font-size: 10rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+section.what-we-do {
+    height: 100vh;
+    background-color: var(--content-color);
+    color: var(--content-text-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.what-we-do-text {
+    width: 55%;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.what-we-do-text p {
+    font-size: 1.5rem;
+    margin: 1.5rem;
+}
+
+img.what-we-do-side-image {
+    width: 45%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(7rem);
+    transition: all 1s ease;
+}
+
+img.what-we-do-side-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+footer {
+    position: fixed;
+    bottom: 2rem;
+    left: 5%;
+    transform: translateX(-100%);
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 1000;
+    background-color: var(--background-color);
+    border-radius: 1.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--background-text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+footer.visible {
+    opacity: 1;
+    transform: translateX(0);
 }

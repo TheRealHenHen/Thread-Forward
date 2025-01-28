@@ -1,3 +1,12 @@
+:root {
+    --background-color: var(--dark-background-color);
+    --content-color: var(--dark-content-color);
+    --body-text-color: var(--dark-body-text-color);
+    --content-text-color: var(--dark-content-text-color);
+    --header-color: var(--dark-header-color);
+    --background-image: var(--dark-background-image);
+}
+
 /* || IMAGE GALLERY */
 .gallery-grid {
     color: var(--content-text-color);
@@ -14,9 +23,14 @@
     cursor: pointer;
     padding: 2rem;
     border-radius: 0.25rem;
-    min-height: 18.75rem;
+    height: 18.75rem;
     position: relative;
     background-color: var(--content-color);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
 }
 
 /* Full background image style */
@@ -66,4 +80,99 @@
     .gallery-item {
         min-height: 15.625rem;
     }
+}
+
+/* Add these styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0); /* Start fully transparent */
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.25rem;
+    position: relative;
+    transform: scale(0.95);
+    opacity: 0;
+}
+
+.modal.show {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8); /* Fade to semi-transparent black */
+}
+
+.modal-content.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-image {
+    padding: 4rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.25rem;
+    min-height: 50vh;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+/* Add gradient overlay with transition */
+.modal-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0));
+    border-radius: 0.25rem;
+    z-index: 1;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Show gradient on hover */
+.modal-image:hover::before {
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+}
+
+/* Text styles */
+.modal-image h2,
+.modal-image p {
+    position: relative;
+    z-index: 2;
+    color: var(--light-content-text-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show text on hover */
+.modal-image:hover h2,
+.modal-image:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal.show .modal-image {
+    opacity: 1;
+    transform: translateY(0);
 }

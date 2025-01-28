@@ -1,18 +1,25 @@
 :root {
+    /* Background colours */
+    --bg-color-light: rgb(239, 232, 190);
+    --bg-color-dark: rgb(79, 85, 38);
+
+    /* Text colours */
+    --text-color-light: rgb(79, 85, 38);
+    --text-color-dark: rgb(218, 209, 91);
+
     /* Light mode */
-    --light-background-color: white;
-    --light-content-color: rgba(229, 40, 40, 0.8);
-    --light-body-text-color: rgb(11, 11, 11);
-    --light-content-text-color: white;
-    --light-header-color: rgba(255, 255, 255, 0.6);
+    --light-background-color: var(--bg-color-light);
+    --light-content-color: var(--bg-color-dark);
+    --light-body-text-color: var(--text-color-light);
+    --light-content-text-color: var(--text-color-dark);
+    --light-header-color: rgba(var(--bg-color-light), 0.6);
 
     /* Dark mode */
-
-    --dark-background-color: rgb(11, 11, 11);
-    --dark-content-color: rgba(255, 255, 255, 0);
-    --dark-body-text-color: white;
-    --dark-content-text-color: rgb(11, 11, 11);
-    --dark-header-color: rgba(11, 11, 11, 0.6);
+    --dark-background-color: var(--bg-color-dark);
+    --dark-content-color: var(--bg-color-light);
+    --dark-body-text-color: var(--text-color-dark);
+    --dark-content-text-color: var(--text-color-light);
+    --dark-header-color: rgba(var(--bg-color-dark), 0.6);
 
     /* Default */
     --background-color: var(--light-background-color);
@@ -20,6 +27,7 @@
     --body-text-color: var(--light-body-text-color);
     --content-text-color: var(--light-content-text-color);
     --header-color: var(--light-header-color);
+    --background-image: var(--light-background-image);
 }
 
 @font-face {
@@ -44,23 +52,30 @@
 }
 
 body {
-    font-family: Lexend, sans-serif;
-    background-image: url(../assets/images/background/light-background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: var(--background-color);
-    color: var(--body-text-color);
+    font-family: Fredoka, sans-serif;
     line-height: 1.6;
     padding-top: 8vh;
+    background-color: var(--background-color);
+    color: var(--body-text-color);
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 body.transitions-enabled {  
-    transition: background-color 0.5s linear, color 0.5s linear;
+    transition: background-image 0.5s linear, background-color 0.5s linear, color 0.5s linear;
 }
 
-body.transitions-enabled *:not(#darkModeToggle) {   
-    transition: background-color 0.5s linear, color 0.5s linear;
+h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+img {
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
 }
 
 /* || HEADER NAVIGATION */
@@ -68,18 +83,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     background-color: var(--header-color);
-    transform: translateY(0);
-}
-
-header.hidden {
-    transform: translateY(-100%);
 }
 
 .header-right {
@@ -100,7 +110,7 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.0625rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     position: relative;
     padding-bottom: 0.5rem;
 }
@@ -122,14 +132,8 @@ nav a.active::after {
 /* || HERO */
 .hero {
     text-align: center;
-    padding: 12vh 0 6vh 0;
+    padding: 12vh 0 0 0;
     color: var(--body-text-color);
-}
-
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 500;
-    letter-spacing: 4px;
 }
 
 /* || DARK MODE TOGGLE */
@@ -152,4 +156,5 @@ body.dark-mode {
     --body-text-color: var(--dark-body-text-color);
     --content-text-color: var(--dark-content-text-color);
     --header-color: var(--dark-header-color);
+    --background-image: var(--dark-background-image);
 }

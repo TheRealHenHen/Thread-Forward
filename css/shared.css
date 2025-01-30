@@ -35,6 +35,11 @@
     src: url(../assets/fonts/Fredoka.ttf);
 } 
 
+@font-face {
+    font-family: Playfair;
+    src: url(../assets/fonts/Playfair.ttf);
+} 
+
 * {
     margin: 0;
     padding: 0;
@@ -60,6 +65,10 @@ p {
 
 body.transitions-enabled {  
     transition: background-image 0.5s linear, background-color 0.5s linear, color 0.5s linear;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Playfair;
 }
 
 h1 {

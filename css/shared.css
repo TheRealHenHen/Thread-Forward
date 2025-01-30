@@ -13,6 +13,7 @@
     --light-body-text-color: var(--text-color-light);
     --light-content-text-color: var(--text-color-dark);
     --light-header-color: rgba(var(--bg-color-light), 0.6);
+    --light-logo: url(../assets/images/icons/logo-light.png);
 
     /* Dark mode */
     --dark-background-color: var(--bg-color-dark);
@@ -20,6 +21,7 @@
     --dark-body-text-color: var(--text-color-dark);
     --dark-content-text-color: var(--text-color-light);
     --dark-header-color: rgba(var(--bg-color-dark), 0.6);
+    --dark-logo: url(../assets/images/icons/logo-dark.png);
 
     /* Default */
     --background-color: var(--light-background-color);
@@ -28,6 +30,7 @@
     --content-text-color: var(--light-content-text-color);
     --header-color: var(--light-header-color);
     --background-image: var(--light-background-image);
+    --logo: var(--light-logo);
 }
 
 @font-face {
@@ -77,7 +80,7 @@ h1 {
     line-height: 1.2;
 }
 
-img {
+img:not(.logo, .team-photo) {
     border-radius: 0.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
 }
@@ -87,19 +90,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     background-color: var(--header-color);
+    padding: 0 1.5rem;
 }
 
 .header-right {
     display: flex;
     align-items: center;
     gap: 2rem;
+}
+
+img.logo {
+    content: var(--logo);
+    height: 7rem;
 }
 
 nav ul {
@@ -161,4 +169,5 @@ body.dark-mode {
     --content-text-color: var(--dark-content-text-color);
     --header-color: var(--dark-header-color);
     --background-image: var(--dark-background-image);
+    --logo: var(--dark-logo);
 }

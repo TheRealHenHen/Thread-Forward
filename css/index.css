@@ -6,14 +6,14 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    gap: 8rem;
+    gap: 6rem;
     margin-bottom: 10rem;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.0;
     margin-bottom: 1rem;
 }
 
@@ -61,13 +61,13 @@ section.donation-number {
 .donation-number h2, .what-we-do h2 {
     font-size: 4rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .donation-number h1 {
     font-size: 10rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 section.what-we-do {
@@ -96,7 +96,7 @@ img.what-we-do-side-image {
     width: 45%;
     height: 100%;
     opacity: 0;
-    transform: translateX(7rem);
+    transform: translateX(-7rem);
     transition: all 1s ease;
 }
 
@@ -122,6 +122,8 @@ footer {
 }
 
 footer a {
+    font-family: Playfair;
+    font-weight: 600;
     text-decoration: none;
     color: var(--background-text-color);
     font-size: 1.5rem;
